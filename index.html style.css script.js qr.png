@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Love</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div class="page active">
+<h1>My Love ❤️</h1>
+<p>You make my world brighter every day.</p>
+<button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+<h1>Our Memories 📸</h1>
+
+<div class="gallery">
+<img src="images/pic1.jpg">
+<img src="images/pic2.jpg">
+<img src="images/pic3.jpg">
+</div>
+
+<button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+<h1>My Love Letter 💌</h1>
+
+<p class="letter">
+To my favorite person,<br><br>
+
+Thank you for always making me smile  
+and for being there for me.  
+Life feels happier with you in it.<br><br>
+
+You mean a lot to me ❤️
+</p>
+
+<button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page sea">
+
+<h1>Our Song 🎵</h1>
+
+<p>Scan this QR code</p>
+
+<img class="qr" src="qr.png">
+
+<p>🐚 💙 🐚</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page final">
+
+<h1 class="big">Will You Be My Good Boy? ❤️</h1>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+}
+
+.page{
+display:none;
+height:100vh;
+padding:40px;
+background:#ffd6e7;
+}
+
+.page.active{
+display:block;
+}
+
+h1{
+color:#ff2e6e;
+}
+
+.gallery img{
+width:200px;
+border-radius:15px;
+margin:10px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+}
+
+.letter{
+font-size:20px;
+line-height:1.6;
+}
+
+.big{
+font-size:60px;
+margin-top:200px;
+}
+
+.qr{
+width:220px;
+margin-top:20px;
+}
+
+/* Sea Theme */
+
+.sea{
+background:#bdeaff;
+color:#003c5a;
+}
+
+/* Final Page */
+
+.final{
+background:#ffc0cb;
+}
+let pages=document.querySelectorAll(".page");
+let current=0;
+
+function next(){
+
+pages[current].classList.remove("active");
+
+current++;
+
+if(current<pages.length){
+pages[current].classList.add("active");
+}
+
+}
